@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Blog | Adicionar Categoria {% endblock title %} {% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %}
+
+<br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="categorias">{{ form.as_p form.categorias }}</div>
+    <input type="submit" value="Adicionar">
+
+</form>
+
+{% endblock body %}

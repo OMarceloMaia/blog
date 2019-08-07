@@ -1,0 +1,15 @@
+ {% extends 'base.html' %} {% load static %} {% load widget_tweaks %} {% block title %} Blog | Criar Postagem {% endblock title %} {% block style %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock style %} {% block body %}
+<br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="texto">{% render_field form.texto %}</div>
+    <div class="autor">{% render_field form.autor %}</div>
+    <div class="categorias">{% render_field form.categorias %}</div>
+    <input type="submit" value="Enviar">
+
+</form>
+
+
+{% endblock body %}

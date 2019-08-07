@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Blog | Usuários {% endblock title %} {% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %} {% for u in posts %}
+
+<br>
+<br>
+<br>
+<div class="bloquinho">
+
+    <p> {{u.texto}} </p>
+    <p> - {{u.autor}} </p>
+    <p>{{u.categorias}}</p>
+    <p class="data"> {{u.created_at}} </p>
+    <a href="{% url 'posts:update_post' u.id %}">Alterar Postagem</a>
+    <a href="{% url 'posts:delete_post' u.id %}">Deletar Postagem</a>
+</div>
+
+{% empty %}
+<p>Sem Postagens :(</p>
+<a href="{% url 'posts:add_post' %}">Adicionar Postagem</a> {% endfor %}{% endblock body %}
