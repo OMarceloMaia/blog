@@ -19,4 +19,16 @@ class CategoriaCreateView(CreateView):
     form_class = CategoriaCreateForm
     context_object_name = 'addCategoria'
     template_name = 'categoria/addcategoria.html'
-    #success_url = reverse_lazy('posts:list_posts')
+    success_url = reverse_lazy('posts:add_post')
+
+class CategoriaUpdateView(generic.UpdateView):
+    model = Categorias
+    fields = ['categorias']
+    template_name = 'categoria/edit.html'
+    success_url = reverse_lazy('posts:list_posts')
+
+class CategoriaDeleteView(generic.DeleteView):
+    model = Categorias
+    context_object_name = 'categorias'
+    template_name = 'categoria/delete.html'
+    success_url = reverse_lazy('posts:list_posts')

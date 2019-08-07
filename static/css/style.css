@@ -28,8 +28,6 @@
     border: 2px black solid;
     width: 300px;
     height: 400px;
-    justify-items: center;
-    justify-items: legacy;
 }
 
 .data {

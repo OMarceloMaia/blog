@@ -3,7 +3,7 @@
     {% csrf_token %}
     <p>Você tem certeza que quer deletar a postagem abaixo??</p>
     {{post.texto}}
-    <button type="button" class="btn btn-dark"><input type="submit" value="Deletar"></button>
+    <button type="submit" class="btn btn-dark"><input type="submit" value="Deletar"></button>
     <button type="button" class="btn btn-dark" href="{% url 'posts:list_posts' %}">Cancelar</button>
 
 </form>

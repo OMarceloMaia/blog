@@ -9,10 +9,13 @@
 
     <p> {{u.texto}} </p>
     <p> - {{u.autor}} </p>
-    <p>{{u.categorias}}</p>
-    <p class="data"> {{u.created_at}} </p>
+    <a href="{% url 'categorias:edit_categoria' u.categorias.id %}">Categoria: {{u.categorias}}</a>
+    <a href="{% url 'categorias:del_categoria' u.categorias.id %}">Deletar Categoria</a>
+
+    <p> {{u.created_at}} </p>
     <a href="{% url 'posts:update_post' u.id %}">Alterar Postagem</a>
     <a href="{% url 'posts:delete_post' u.id %}">Deletar Postagem</a>
+
 </div>
 
 {% empty %}

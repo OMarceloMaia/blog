@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Blog | Deletar Categoria {% endblock title %} {% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %}
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Você tem certeza que quer deletar a categoria abaixo??</p>
+    {{categorias.categorias}}
+    <br><br>
+    <input type="submit" value="Deletar">
+
+</form>
+
+{% endblock body %}
