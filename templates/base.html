@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}"> {% block style %}{% endblock style %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
 </head>
 
@@ -24,6 +24,8 @@
                 <li><a href="{% url 'posts:list_posts' %}">Postagens</a></li>
                 <li><a href="{% url 'posts:add_post' %}">Adicionar Postagem</a></li>
                 <li><a href="{% url 'categorias:add_categoria' %}">Adicionar Categoria</a></li>
+                <li><a href="{% url 'comentarios:list_comentarios' %}">Comentarios</a></li>
+                <li><a href="{% url 'comentarios:add_comentarios' %}">Comentar</a></li>
             </ul>
         </div>
     </nav>

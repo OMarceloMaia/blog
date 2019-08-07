@@ -4,10 +4,9 @@
 <br><br>
 <form action="" method="post">
     {% csrf_token %}
-    <div class="texto">Texto: {% render_field form.texto %}</div><br>
-    <div class="autor">Autor: {% render_field form.autor %}</div><br>
-    <div class="categorias"> Categorias: {% render_field form.categorias %}</div><br>
-    <input type="submit" value="Enviar">
+    <div class="comentarios">{% render_field form.comentarios %}</div>
+    <div class="comentarios">{% render_field form.posts %}</div>
+    <input type="submit" value="Comentar">
 
 </form>
 

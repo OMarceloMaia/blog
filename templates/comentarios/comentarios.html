@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} Blog | Comentários {% endblock title %} 
+{% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %}
+
+{% block body %} 
+
+
+{% for d in list_comentarios %}
+
+<p>{{d.comentarios}}</p><br> {{d.posts}} <br><br>
+
+<a href="{% url 'comentarios:edit_comentarios' d.id %}">Alterar Comentário</a>
+<a href="{% url 'comentarios:del_comentarios' d.id %}">Deletar Comentário</a>
+
+{% endfor %}
+
+
+</div>
+
+{% endblock body %}

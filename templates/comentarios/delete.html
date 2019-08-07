@@ -1,0 +1,9 @@
+<h3>Deletar</h3>
+<form action='' method="post">
+    {% csrf_token %}
+    <p>Você tem certeza que quer deletar o comentário abaixo??</p>
+    {{comentario.comentario}}
+    <button type="submit" class="btn btn-dark"><input type="submit" value="Deletar"></button>
+    <button type="button" class="btn btn-dark" href="{% url 'posts:list_posts' %}">Cancelar</button>
+
+</form>

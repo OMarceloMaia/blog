@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% load static %} {% load widget_tweaks %} {% block title %} Blog | Editar {% endblock title %} {% block style %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+ {% endblock style %}
+
+{% block body %}
+
+<h3>Modificar Comentário</h3>
+<form action='' method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="Confirmar">
+</form>
+
+{% endblock body %}
