@@ -2,24 +2,40 @@
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %} {% for u in posts %}
 
-<br>
-<br>
-<br>
+<br><br><br>
+
+<div class="tudo">
 <div class="bloquinho">
+    <br><br>
 
-    <p> {{u.texto}} </p>
-    <p> - {{u.autor}} </p>
-    <a href="{% url 'categorias:edit_categoria' u.categorias.id %}">Categoria: {{u.categorias}}</a>
-    <a href="{% url 'categorias:del_categoria' u.categorias.id %}">Deletar Categoria</a>
+   
+    <center><p>{{u.texto}} </p></center>
+    <div class="autor"> <p> - {{u.autor}} </p> </div>
+    <center> <p> {{u.created_at}} </p> </center>
 
-    <p> {{u.created_at}} </p>
-    <a href="{% url 'posts:update_post' u.id %}">Alterar Postagem</a>
-    <a href="{% url 'posts:delete_post' u.id %}">Deletar Postagem</a>
+    <div class="btn-group btn-group-xs">
+    <a href="{% url 'categorias:edit_categoria' u.categorias.id %}" class="btn btn-primary">Categoria: {{u.categorias}}</a>
+    <a href="{% url 'categorias:del_categoria' u.categorias.id %}" class="btn btn-primary">Deletar Categoria</a>
+    </div>
+   
+    <br>
+   
+    <div class="btn-group">
+        <a href="{% url 'posts:update_post' u.id%}"  class="btn btn-primary"> Alterar Postagem</a>
+        <a href="{% url 'posts:delete_post' u.id%}"  class="btn btn-primary"> Deletar Postagem</a>
+    </div>
 
 
 
 </div>
+</div>
 
 {% empty %}
-<p>Sem Postagens :(</p>
-<a href="{% url 'posts:add_post' %}">Adicionar Postagem</a> {% endfor %}{% endblock body %}
+
+<center><p>Sem Postagens :(</p></center> 
+<div class="btn-group">
+<a href="{% url 'posts:add_post' %}" class="btn btn-primary">Adicionar Postagem</a> 
+</div>
+
+{% endfor %}
+{% endblock body %}

@@ -7,16 +7,22 @@
 
 {% block body %} 
 
+<center>
+
 
 {% for d in list_comentarios %}
 
+
 <p>{{d.comentarios}}</p><br> {{d.posts}} <br><br>
 
-<a href="{% url 'comentarios:edit_comentarios' d.id %}">Alterar Comentário</a>
-<a href="{% url 'comentarios:del_comentarios' d.id %}">Deletar Comentário</a>
+
+<div class="btn-group">
+        <a href="{% url 'comentarios:edit_comentarios' d.id %}"  class="btn btn-primary"> Alterar Comentário</a>
+        <a href="{% url 'comentarios:del_comentarios' d.id %}"  class="btn btn-primary"> Deletar Comentário</a>
+</div>
 
 {% endfor %}
-
+</center>
 
 </div>
 

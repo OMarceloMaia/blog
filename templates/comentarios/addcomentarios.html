@@ -1,12 +1,12 @@
-{% extends 'base.html' %} {% load static %} {% load widget_tweaks %} {% block title %} Blog | Criar Postagem {% endblock title %} {% block style %}
+{% extends 'base.html' %} {% load static %} {% load widget_tweaks %} {% block title %} Blog | Adicionar Comentário {% endblock title %} {% block style %}
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock style %} {% block body %}
-<br><br>
+<h3>Adicionar Comentário</h3>
 <form action="" method="post">
     {% csrf_token %}
-    <div class="comentarios">{% render_field form.comentarios %}</div>
-    <div class="comentarios">{% render_field form.posts %}</div>
-    <input type="submit" value="Comentar">
+    Comentário: <div class="comentarios">{% render_field form.comentarios %}</div>
+    Postagem: <div class="comentarios">{% render_field form.posts %}</div><br>
+    <button type="submit" class="btn btn-dark">Comentar</button>
 
 </form>
 

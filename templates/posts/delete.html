@@ -1,9 +1,14 @@
-<h3>Deletar</h3>
+{% extends 'base.html' %} {% load static %} {% load widget_tweaks %} {% block title %} Blog | Deletar Postagem {% endblock title %} {% block style %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock style %} {% block body %}
 <form action='' method="post">
     {% csrf_token %}
     <p>Você tem certeza que quer deletar a postagem abaixo??</p>
-    {{post.texto}}
-    <button type="submit" class="btn btn-dark"><input type="submit" value="Deletar"></button>
-    <button type="button" class="btn btn-dark" href="{% url 'posts:list_posts' %}">Cancelar</button>
+    {{posts.texto}}
+    <br>
+    <br>
+    <button type="submit" class="btn btn-dark">Deletar</button>
+    
 
 </form>
+{% endblock body %}
