@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %} Blog | Cdastro {% endblock title %}
+{% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+ {% endblock scripts %} 
+ {% block body %} 
+ <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-dark">Cadastrar</button>
+ </form>
+ 
+
+ {% endblock body %}

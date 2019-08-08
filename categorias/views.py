@@ -2,7 +2,7 @@ from categorias.models import Categorias
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView
 from django.views import generic
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from categorias.forms import CategoriaCreateForm
 
@@ -14,20 +14,20 @@ class CategoriaListView(ListView):
     #template_name = 'categoria/addcategoria.html'
     #ordering = ['-created_at',]
 
-class CategoriaCreateView(CreateView):
+class CategoriaCreateView(LoginRequiredMixin, CreateView):
     model = Categorias
     form_class = CategoriaCreateForm
     context_object_name = 'addCategoria'
     template_name = 'categoria/addcategoria.html'
     success_url = reverse_lazy('posts:add_post')
 
-class CategoriaUpdateView(generic.UpdateView):
+class CategoriaUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Categorias
     fields = ['categorias']
     template_name = 'categoria/edit.html'
     success_url = reverse_lazy('posts:list_posts')
 
-class CategoriaDeleteView(generic.DeleteView):
+class CategoriaDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Categorias
     context_object_name = 'categorias'
     template_name = 'categoria/delete.html'

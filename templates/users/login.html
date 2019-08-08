@@ -5,13 +5,13 @@
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
  {% endblock scripts %} 
+
  {% block body %} 
- {% for u in users %}
 
-<p> {{u.email}} </p>
-<p> {{u.username}} </p>
-<p>{{u.created_at}}</p>
-
-{% endfor %}
+ <form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-dark">Logar</button>
+ </form>
 
  {% endblock body %}

@@ -60,6 +60,10 @@
 }
 
 body{
-    background-image: url(https://s2.best-wallpaper.net/wallpaper/3840x2160/1904/Pinnacle-cliff-mountains-nature-landscape_3840x2160.jpg);
+    background-image: url(https://picturesmania.com/0-1/7670_zima-sneg-.jpg) !important;
+    height: 100vh;
     color: black;
+    background-size: contain;
+    background-position: center;
+    /* background-repeat: no-repeat; */
 }

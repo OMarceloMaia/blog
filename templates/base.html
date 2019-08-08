@@ -35,6 +35,19 @@
                 <li><a class="names" href="{% url 'categorias:add_categoria' %}">Adicionar Categoria</a></li>
                 <li><a class="names" href="{% url 'comentarios:list_comentarios' %}">Comentários</a></li>
                 <li><a class="names" href="{% url 'comentarios:add_comentarios' %}">Comentar</a></li>
+
+                {% if not request.user.is_authenticated  %}
+                <li><a class="names" href="{% url 'users:login_user' %}">Login</a></li>
+                <li><a class="names" href="{% url 'users:register_user' %}">Registre-se</a></li>
+
+                {% else %}
+                <li><a class="names"  href="">Olá, {{request.user}} </a></li>
+                <li><a class="names" href="{% url 'users:logout_user' %}">Sair</a></li>
+                {% endif %}
+
+                
+
+
       </ul>
     </div>
   </div>

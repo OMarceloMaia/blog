@@ -91,6 +91,9 @@ DATABASES = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+LOGIN_URL ='users:login_user'
+LOGIN_REDIRECT_URL = 'posts:add_post'
+LOGOUT_REDIRECT_URL = 'users:login_user'
 
 
 # Password validation
