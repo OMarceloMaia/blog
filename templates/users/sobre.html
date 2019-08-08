@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %} Blog | Sobre Usuário {% endblock title %}
+{% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+ {% endblock scripts %} 
+ {% block body %} 
+ 
+
+
+<p>Nome do Usuário: {{users.username}} </p>
+<p>Email: {{users.email}} </p>
+<p>Criação: {{users.created_at}}</p>
+<p>Último acesso: {{users.last_login}}</p>
+<p>Admin: {{users.is_staff}}</p>
+
+
+
+ {% endblock body %}

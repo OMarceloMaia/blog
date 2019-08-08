@@ -60,10 +60,12 @@
 }
 
 body{
-    background-image: url(https://picturesmania.com/0-1/7670_zima-sneg-.jpg) !important;
+    /* background-image: url(https://picturesmania.com/0-1/7670_zima-sneg-.jpg) !important;
     height: 100vh;
     color: black;
     background-size: contain;
-    background-position: center;
+    background-position: center; */
     /* background-repeat: no-repeat; */
+    font-family: OCR A Std, monospace !important;
+
 }

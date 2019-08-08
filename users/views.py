@@ -26,6 +26,14 @@ class UserRegisterView(generic.CreateView):
     form_class = UserCreateForm
     success_url = reverse_lazy('users:login_user')
 
+class UserSobreView(generic.DetailView):
+    model = User
+    template_name = "users/sobre.html"
+    context_object_name = 'users'
+    success_url = reverse_lazy('users:login_user')
+
+
+
 
     
     

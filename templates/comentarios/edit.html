@@ -7,7 +7,8 @@
 
 <h3>Modificar Comentário</h3>
 <form action='' method="post">
-    {% csrf_token %} {{form.as_p}}
+    {% csrf_token %}
+    Comentário: <div class="comentarios">{% render_field form.comentarios %}</div>
     <button type="submit" class="btn btn-dark">Modificar</button>
 </form>
 

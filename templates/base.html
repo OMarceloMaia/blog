@@ -41,7 +41,7 @@
                 <li><a class="names" href="{% url 'users:register_user' %}">Registre-se</a></li>
 
                 {% else %}
-                <li><a class="names"  href="">Olá, {{request.user}} </a></li>
+                <li><a class="names"  href="{% url 'users:sobre_user' request.user.id %}">Olá, {{request.user}} </a></li>
                 <li><a class="names" href="{% url 'users:logout_user' %}">Sair</a></li>
                 {% endif %}
 
